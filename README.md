@@ -1,5 +1,8 @@
 # yuju
 
+[![Python Versions](https://img.shields.io/pypi/pyversions/yuju)](https://pypi.org/project/yuju/)
+[![PyPI Version](https://img.shields.io/pypi/v/yuju)](https://pypi.org/project/yuju/)
+
 An interactive tool for visualizing vector fields and analyzing torque distributions.
 
 - **Git repository**: <https://github.com/luocfprime/yuju/>
@@ -8,33 +11,45 @@ An interactive tool for visualizing vector fields and analyzing torque distribut
 - **Documentation** <https://luocfprime.github.io/yuju/>
 
 
-## Getting started with your project
+## Install
 
-### 1. Set Up Your Development Environment
+Prerequisites: You must have at least one Python package manager installed (e.g. [uv](https://docs.astral.sh/uv/getting-started/installation/)).
 
-Install the environment and the pre-commit hooks with
-
-```bash
-make install
-```
-
-This will also generate your `uv.lock` file
-
-### 2. Commit the changes
-
-Commit changes to your repository with
+Install it from PyPI:
 
 ```bash
-git add .
-git commit -m 'Fix formatting issues'
-git push origin main
+uv tool install yuju
 ```
 
-You are now ready to start development on your project!
+Or, if you want to run it once without installing it, you can use the `uv run` command:
 
-For activating the automatic documentation with MkDocs, see [here](https://matrig.github.io/minicookiecutter/features/mkdocs/#enabling-the-documentation-on-github).
+```bash
+uv run --with yuju yuju xxx  # xxx being the subcommand you want to run
+```
 
 
----
+## Usage
 
-Repository initiated with [matrig/minicookiecutter](https://github.com/matrig/minicookiecutter).
+```text
+$ yuju -h
+                                                                                                                                                   
+ Usage: yuju [OPTIONS] COMMAND [ARGS]...                                                                                                           
+                                                                                                                                                   
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --install-completion            Install completion for the current shell.                                                                       │
+│ --show-completion               Show completion for the current shell, to copy it or customize the installation.                                │
+│ --help                -h        Show this message and exit.                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ merge   Merge 3 Tecplot files into one.                                                                                                         │
+│ viz     Aggregating vectors within a specified bounding box.                                                                                    │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## License
+
+MIT.
